@@ -1,0 +1,15 @@
+.loadImg
+{
+  width: 70%;
+  display: block;
+  margin-top: 50%;
+  opacity: 0.3;
+}
+.startBtn
+{
+  width: 33%;
+  margin: 0 33% auto;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 5px;
+}
