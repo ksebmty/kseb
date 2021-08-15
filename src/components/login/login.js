@@ -1,22 +1,42 @@
-import React, { Component } from 'react';
+import React, { useCallback, useContext } from "react";
+import { withRouter, Redirect } from "react-router";
+import app from "../../base";
+import { AuthContext } from "../auth/auth";
 import './login.css'
 import Navbar from '../navbar/navbar'
 
-class login extends Component {
-    render() {
-        return (
-            <div>
-                <Navbar />
-                <form action="/action_page.php" method="post">
-                    <div class="container">
-                        <input type="text" className="loginInput" placeholder="Employee Code" name="uname" required />
-                        <input type="password" className="loginInput" placeholder="Password" name="psw" required />
-                        <button type="submit" className="loginBtn">Login</button>
-                    </div>
-                </form>
-            </div>
-        );
-    }
-}
+const Login = ({ history }) => {
+  const handleLogin = useCallback(
+    async event => {
+      event.preventDefault();
+      const { email, password } = event.target.elements;
+      try {
+        await app
+          .auth()
+          .signInWithEmailAndPassword(email.value, password.value);
+        history.push("/");
+      } catch (error) {
+        alert(error);
+      }
+    },
+    [history]
+  );
 
-export default login;
+  const { currentUser } = useContext(AuthContext);
+
+  if (currentUser) {
+    return <Redirect to="/" />;
+  }
+return (
+    <div>
+        <Navbar />
+      <form onSubmit={handleLogin}>
+          <input name="email" type="email" placeholder="Email"  className="loginInput" />
+          <input name="password" type="password" placeholder="Password" className="loginInput" />
+        <button type="submit"  className="loginBtn">Log in</button>
+      </form>
+    </div>
+  );
+};
+
+export default withRouter(Login);

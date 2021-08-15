@@ -1,15 +1,19 @@
 body {font-family: Arial, Helvetica, sans-serif;}
-form {border: none}
+form 
+{
+  border: none;
+  padding-top: 30px;
+}
 
-.loginInput[type=text], .loginInput[type=password] {
-  width: 100%;
-  padding: 15px 20px;
-  margin: 8px 0;
+.loginInput[type=email], .loginInput[type=password] {
+  width: 80%;
+  padding: 13px 20px;
+  margin: 2% 10%;
   display: inline-block;
   border: 0px solid #ccc;
   box-sizing: border-box;
-  box-shadow: 0px 0px 12px -10px black;
-  color: #04AA6D;
+  box-shadow: 0px 0px 11px -9px black;
+  color: #3c4240;
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
 }
@@ -21,11 +25,11 @@ color: rgb(61, 61, 61);
 .loginBtn {
   background-color: #04AA6D;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 13px 20px;
+  margin: 5% 10%;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
 

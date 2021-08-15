@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import Home from '../login/login'
+import React from "react"
+import app from "../../base"
 
-class home extends Component {
-    render() {
-        return (
-            <div>
-                <Home />
-            </div>
-        );
-    }
-}
+const Home = () => {
+    return (
+        <>
+            <h1>Home</h1>
+            <button onClick={() => app.auth().signOut() }>Sign Out</button>
+        </>
+    );
+};
 
-export default home;
+export default Home
