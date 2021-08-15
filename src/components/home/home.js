@@ -3,6 +3,7 @@ import app from "../../base"
 import './home.css';
 import { Container, Navbar } from 'react-bootstrap'
 import logoImg from '../../asset/logo.png'
+import Maintanance from '../../asset/maintanance.jpg'
 
 
 const Home = () => {
@@ -14,6 +15,9 @@ const Home = () => {
                     <button onClick={() => app.auth().signOut() } className="signoutbtn">Sign Out</button>
                 </Container>
             </Navbar>
+            <div>
+                <img src={Maintanance} className="maintananceImg" alt="/"/>
+            </div>
         </>
     );
 };
