@@ -1,0 +1,22 @@
+.homeNav
+{
+    background-color: #fafafa;
+    height: 50px;
+}
+.signoutbtn
+{
+    background-color: #04AA6D;
+    border: none;
+    font-size: 12px;
+    width: 25%;
+    height: 33px;
+    border-radius: 3px;
+    color: blanchedalmond;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.homeImg
+{
+    margin: 0;
+    margin-top: -30%;
+}
