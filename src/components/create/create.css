@@ -1,0 +1,92 @@
+.createCon[type=text]
+{
+    width: 80%;
+    height: 40px;
+    background: rgb(240, 240, 240);
+    border: none;
+    padding-left: 15px;
+    margin-left: 10%;
+    color: #0d192c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px -3px rgb(107, 107, 107);
+}
+.createCon:focus-within
+{
+    outline: none;
+}
+.createArea
+{
+    width: 35%;
+    height:40px;
+    margin-top: 5%;
+    margin-left: 10%;
+    border: none;
+    background: rgb(240, 240, 240);
+    color: #0d192c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    padding-left: 9px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px -3px rgb(107, 107, 107);
+
+}
+.createDay
+{
+    width: 35%;
+    height:40px;
+    margin-left: 10%;
+    border: none;
+    background: rgb(240, 240, 240);
+    color: #0d192c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    padding-left: 9px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px -3px rgb(107, 107, 107);
+
+}
+.createDate
+{
+    width: 80%;
+    height:40px;
+    margin-top: 5%;
+    margin-left: 10%;
+    border: none;
+    background: rgb(240, 240, 240);
+    color: #0d192c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    padding-left: 9px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px -3px rgb(107, 107, 107);
+
+}
+.createType
+{
+    width: 80%;
+    height:40px;
+    margin-top: 5%;
+    margin-left: 10%;
+    border: none;
+    background: rgb(240, 240, 240);
+    color: #0d192c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    padding-left: 9px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px -3px rgb(107, 107, 107);
+
+}
+.createbtn
+{
+    width: 80%;
+    height:40px;
+    margin-top: 5%;
+    margin-left: 10%;
+    border: none;
+    color: white;
+    background: #04AA6D;
+}
+

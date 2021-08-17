@@ -1,22 +1,22 @@
 import React from "react"
-import app from "../../base"
+import Navbar from '../navbar/navbar'
 import './home.css';
-import { Container, Navbar } from 'react-bootstrap'
-import logoImg from '../../asset/logo.png'
-import Maintanance from '../../asset/maintanance.jpg'
+// import Maintanance from '../../asset/maintanance.jpg'
 
 
 const Home = () => {
     return (
         <>
-            <Navbar className="homeNav">
-                <Container className="homeCon">
-                    <img src={logoImg} width="20px" className="homeImg" alt="/"/>
-                    <button onClick={() => app.auth().signOut() } className="signoutbtn">Sign Out</button>
-                </Container>
-            </Navbar>
             <div>
-                <img src={Maintanance} className="maintananceImg" alt="/"/>
+                <Navbar />
+                {/* <img src={Maintanance} className="maintananceImg" alt="/"/> */}
+                <form method="get" action="/add">
+                    <button className="homebtn1" type="submit">Add details</button>
+                </form>
+                <form method="get" action="/list">
+                    <button className="homebtn2" type="submit">View Details</button>
+                </form>
+
             </div>
         </>
     );

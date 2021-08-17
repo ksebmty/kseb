@@ -1,27 +1,25 @@
-.homeNav
+.homebtn1
 {
-    background-color: #fafafa;
-    height: 50px;
-}
-.signoutbtn
-{
-    background-color: #04AA6D;
+    width: 40%;
+    margin-left: 30%;
+    padding: 3%;
+    margin-top: 50%;
     border: none;
-    font-size: 12px;
-    width: 25%;
-    height: 33px;
-    border-radius: 3px;
+    background: #04AA6D;
     color: blanchedalmond;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    border-radius: 5px;
 }
-.homeImg
+.homebtn2
 {
-    margin: 0;
-    margin-top: -30%;
-}
-
-.maintananceImg
-{
-    width: 200px;
+    width: 40%;
+    margin-left: 30%;
+    padding: 3%;
+    border: none;
+    background: #04AA6D;
+    color: blanchedalmond;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
 }

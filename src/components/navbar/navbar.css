@@ -1,26 +1,27 @@
-img 
+.homeNav
 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-    padding-top: 30%;
+    background-color: #fafafa;
+    height: 50px;
 }
-span, p
+.signoutbtn
 {
-    font-family: 'Poppins', sans-serif;
-}
-p
-{
-    font-weight: 600;
-    font-size: 18px;
-    margin: 0px 20px;
-    text-align: center;
-}
-.span
-{
-    font-weight: 300;
-    color: rgb(128, 128, 128);
+    background-color: #04AA6D;
+    border: none;
     font-size: 12px;
-    text-align: center;
+    width: 25%;
+    height: 33px;
+    border-radius: 3px;
+    color: blanchedalmond;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.homeImg
+{
+    margin: 0;
+    margin-top: -30%;
+}
+
+.maintananceImg
+{
+    width: 200px;
 }

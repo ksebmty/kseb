@@ -3,7 +3,7 @@ import { withRouter, Redirect } from "react-router";
 import app from "../../base";
 import { AuthContext } from "../auth/auth";
 import './login.css'
-import Navbar from '../navbar/navbar'
+import Head from '../head/head'
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
@@ -29,7 +29,7 @@ const Login = ({ history }) => {
   }
 return (
     <div>
-        <Navbar />
+        <Head />
       <form onSubmit={handleLogin}>
           <input name="email" type="email" placeholder="Email"  className="loginInput" />
           <input name="password" type="password" placeholder="Password" className="loginInput" />

@@ -1,17 +1,25 @@
-import React, { Component } from 'react';
+import React from "react"
+import app from "../../base"
+import './navbar.css';
+import { Container, Navbar } from 'react-bootstrap'
 import logoImg from '../../asset/logo.png'
-import './navbar.css'
+// import Maintanance from '../../asset/maintanance.jpg'
 
-class navbar extends Component {
-    render() {
-        return (
-            <div className="navBar">
-                <img src={logoImg} width="25%" alt=""/>
-                <p>Welcome Back</p>
-                <p className="span">Sign to continue</p>
+
+const NavbarHome = () => {
+    return (
+        <>
+            <Navbar className="homeNav">
+                <Container className="homeCon">
+                    <img src={logoImg} width="20px" className="homeImg" alt="/"/>
+                    <button onClick={() => app.auth().signOut() } className="signoutbtn">Sign Out</button>
+                </Container>
+            </Navbar>
+            <div>
+                {/* <img src={Maintanance} className="maintananceImg" alt="/"/> */}
             </div>
-        );
-    }
-}
+        </>
+    );
+};
 
-export default navbar;
+export default NavbarHome
