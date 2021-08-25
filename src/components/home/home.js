@@ -1,7 +1,8 @@
 import React from "react"
 import Navbar from '../navbar/navbar'
+import Create from '../create/create'
 import './home.css';
-// import Maintanance from '../../asset/maintanance.jpg'
+
 
 
 const Home = () => {
@@ -9,17 +10,11 @@ const Home = () => {
         <>
             <div>
                 <Navbar />
-                {/* <img src={Maintanance} className="maintananceImg" alt="/"/> */}
-                <form method="get" action="/add">
-                    <button className="homebtn1" type="submit">Add details</button>
-                </form>
-                <form method="get" action="/list">
-                    <button className="homebtn2" type="submit">View Details</button>
-                </form>
-
+                <Create />
             </div>
         </>
     );
 };
 
 export default Home
+

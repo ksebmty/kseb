@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "ksebmty1444b90e_identitypool_1444b90e",
+    "identityPoolName": "ksebmty75b300b9_identitypool_75b300b9",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "ksebmt1444b90e",
-    "userPoolName": "ksebmty1444b90e_userpool_1444b90e",
+    "resourceNameTruncated": "ksebmt75b300b9",
+    "userPoolName": "ksebmty75b300b9_userpool_75b300b9",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -18,7 +18,12 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-        "email"
+        "address",
+        "birthdate",
+        "email",
+        "gender",
+        "name",
+        "phone_number"
     ],
     "aliasAttributes": [
         "email",
@@ -33,10 +38,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "ksebmt1444b90e_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "ksebmt75b300b9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "1444b90e",
-    "resourceName": "ksebmty1444b90e",
+    "sharedId": "75b300b9",
+    "resourceName": "ksebmty75b300b9",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -51,8 +56,26 @@
         ]
     },
     "useDefault": "default",
+    "triggers": "{\n  \"CustomMessage\": [\n    \"verification-link\"\n  ]\n}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
+    "verificationBucketName": "ksebmty75b300b9verificationbucket",
     "usernameCaseSensitive": false,
-    "dependsOn": []
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"CustomMessage\",\n    \"lambdaFunctionName\": \"ksebmty75b300b9CustomMessage\"\n  }\n]",
+    "breakCircularDependency": true,
+    "permissions": [],
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "ksebmty75b300b9CustomMessage",
+            "triggerProvider": "Cognito",
+            "attributes": [
+                "Arn",
+                "Name"
+            ]
+        }
+    ]
 }

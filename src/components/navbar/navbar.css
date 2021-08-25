@@ -5,15 +5,18 @@
 }
 .signoutbtn
 {
-    background-color: #04AA6D;
+    background: #FF416C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border: none;
     font-size: 12px;
-    width: 25%;
+    width: 50%;
     height: 33px;
     border-radius: 3px;
     color: blanchedalmond;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    margin-left: 25%;
 }
 .homeImg
 {
@@ -25,3 +28,49 @@
 {
     width: 200px;
 }
+#dropdown-basic::after
+{
+    display: none;
+}
+#dropdown-basic:focus
+{
+    outline: none;
+}
+#dropdown-basic
+{
+    background-color: transparent;
+    border: 0;
+    color: red;
+}
+.profileDrop
+{
+    left: -10px;
+}
+.profileDrop
+{
+    left: -20px;
+    outline: none;
+}
+.dropMenu
+{
+    margin-left: -80px;
+}
+
+#dropdown-basic:focus
+{
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+

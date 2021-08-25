@@ -4,8 +4,6 @@ import './index.css';
 import Home from './components/home/home';
 import Login from "./components/login/login";
 import Signup from './components/signup/signup';
-import Add from './components/create/create';
-import List from './components/create/list'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthProvider } from './components/auth/auth';
 import PrivateRoute from './components/auth/privateRoute';
@@ -19,8 +17,6 @@ ReactDOM.render(
     <PrivateRoute exact path="/" component={Home} />
     <Route path="/login" component={Login} />
     <Route path="/signup" component={Signup} />
-    <Route path="/add" component={Add} />
-    <Route path="/list" component={List} />
     </AuthProvider>
   </Switch>
 

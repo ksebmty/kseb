@@ -1,0 +1,26 @@
+{
+  "trigger": true,
+  "modules": [
+    "verification-link"
+  ],
+  "parentResource": "ksebmty75b300b9",
+  "functionName": "ksebmty75b300b9CustomMessage",
+  "resourceName": "ksebmty75b300b9CustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [
+    {
+      "key": "RESOURCENAME",
+      "value": "resourceName"
+    }
+  ],
+  "triggerDir": "C:\\Users\\vipin\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "ksebmty75b300b9CustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "https://master.d3sddixd87phlt.amplifyapp.com/",
+  "EMAILSUBJECT": "vipinvellur18@gmail.com",
+  "EMAILMESSAGE": "",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}

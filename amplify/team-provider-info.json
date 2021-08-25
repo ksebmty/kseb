@@ -12,8 +12,15 @@
       "AmplifyAppId": "detnilb191yxh"
     },
     "categories": {
+      "function": {
+        "ksebmty75b300b9CustomMessage": {
+          "REDIRECTURL": "https://master.d3sddixd87phlt.amplifyapp.com/",
+          "EMAILSUBJECT": "vipinvellur18@gmail.com",
+          "EMAILMESSAGE": ""
+        }
+      },
       "auth": {
-        "ksebmty1444b90e": {}
+        "ksebmty75b300b9": {}
       }
     }
   }

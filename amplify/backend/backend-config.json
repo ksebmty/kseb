@@ -1,9 +1,19 @@
 {
   "auth": {
-    "ksebmty1444b90e": {
+    "ksebmty75b300b9": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "ksebmty75b300b9CustomMessage",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
       "customAuth": false,
       "frontendAuthConfig": {
         "loginMechanism": [
@@ -12,7 +22,12 @@
           "PHONE_NUMBER"
         ],
         "signupAttributes": [
-          "EMAIL"
+          "ADDRESS",
+          "BIRTHDATE",
+          "EMAIL",
+          "GENDER",
+          "NAME",
+          "PHONE_NUMBER"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
@@ -23,6 +38,19 @@
           "SMS"
         ]
       }
+    }
+  },
+  "function": {
+    "ksebmty75b300b9CustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {
+    "S3AndCloudFront": {
+      "service": "S3AndCloudFront",
+      "providerPlugin": "awscloudformation"
     }
   }
 }
