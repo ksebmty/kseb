@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
 import firebase from '../../base';
-import './create.css';
-import $ from 'jquery';
-import GetData from './list'
+import './create.css'
+import Navbar from '../navbar/navbar'
 
-class Create extends Component {
+class Edit extends Component {
 
-  constructor() {
-    super();
-    this.ref = firebase.firestore().collection('faultymeters');
+  constructor(props) {
+    super(props);
     this.state = {
+      key: '',
       cno: '',
       area: '',
       day: '',
-      fdate:'',
-      type:''
+      fdate: '',
+      type: '',
     };
   }
+
+  componentDidMount() {
+    const ref = firebase.firestore().collection('faultymeters').doc(this.props.match.params.id);
+    ref.get().then((doc) => {
+      if (doc.exists) {
+        const board = doc.data();
+        this.setState({
+          key: doc.id,
+          cno: board.cno,
+          area: board.area,
+          day: board.day,
+          fdate: board.fdate,
+          type: board.type
+        });
+      } else {
+        console.log("No such document!");
+      }
+    });
+  }
+
   onChange = (e) => {
     const state = this.state
     state[e.target.name] = e.target.value;
-    this.setState(state);
+    this.setState({board:state});
   }
 
   onSubmit = (e) => {
@@ -28,7 +47,8 @@ class Create extends Component {
 
     const { cno, area, day, fdate, type } = this.state;
 
-    this.ref.add({
+    const updateRef = firebase.firestore().collection('faultymeters').doc(this.state.key);
+    updateRef.set({
       cno,
       area,
       day,
@@ -36,11 +56,12 @@ class Create extends Component {
       type
     }).then((docRef) => {
       this.setState({
+        key: '',
         cno: '',
         area: '',
         day: '',
-        fdate:'',
-        type:''
+        fdate: '',
+        type: ''
       });
       this.props.history.push("/")
     })
@@ -49,50 +70,15 @@ class Create extends Component {
     });
   }
 
-  componentDidMount() {
-    $("document").ready(function(){
-        $(".tab-slider--body").hide();
-        $(".tab-slider--body:first").show();
-      });
-      
-      $(".tab-slider--nav li").click(function() {
-        $(".tab-slider--body").hide();
-        var activeTab = $(this).attr("rel");
-        $("#"+activeTab).fadeIn();
-        if($(this).attr("rel") === "tab2"){
-          $('.tab-slider--tabs').addClass('slide');
-        }else{
-          $('.tab-slider--tabs').removeClass('slide');
-        }
-        $(".tab-slider--nav li").removeClass("active");
-        $(this).addClass("active");
-      });     
-  }
-
   render() {
-
-    const { cno, area, day, fdate, type } = this.state;
-
-
-
     return (
-        <>
-            <div className="container">
-              <div className="tab-slider--nav">
-                <ul className="tab-slider--tabs">
-                  <li className="tab-slider--trigger active" rel="tab1">Create</li> 
-                  <li className="tab-slider--trigger" rel="tab2">View</li>
-                </ul>
-              </div>
-            </div>
-
-
-            <div className="container">
-            <div className="tab-slider--container">
-              <div id="tab1" className="tab-slider--body">
-                <form onSubmit={this.onSubmit}>
-                <input type="text" className="form-control" name="cno" value={cno} onChange={this.onChange} placeholder="Consumer Number" required /><br />
-                <select className="selectOption"  name="area" value={area} onChange={this.onChange} required>
+      <>
+      <Navbar />
+      <div class="badge pulsate">Edit</div>
+      <div class="container">
+            <form onSubmit={this.onSubmit}>
+            <input type="text" className="form-control" name="cno" value={this.state.cno} onChange={this.onChange} placeholder="Consumer Number" /><br />
+                <select className="selectOption"  name="area" value={this.state.area} onChange={this.onChange}>
                 <option value="">Select Area</option>
                     <option value="A01">A01</option>
                     <option value="A02">A02</option>
@@ -108,7 +94,7 @@ class Create extends Component {
                     <option value="M02">M02</option>
                     <option value="M03">M03</option>
                 </select>
-                <select className="selectOption"  name="day" value={day} onChange={this.onChange} required>
+                <select className="selectOption"  name="day" value={this.state.day} onChange={this.onChange}>
                 <option value="">Select Day</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -136,8 +122,8 @@ class Create extends Component {
                     <option value="24">24</option>
                     <option value="25">25</option>
                 </select><br /><br />
-                <input type="date" name="fdate" value={fdate} onChange={this.onChange} required />
-                <select className="selectOption"  name="type" value={type} onChange={this.onChange} required>
+                <input type="date" name="fdate" value={this.state.fdate} onChange={this.onChange} />
+                <select className="selectOption"  name="type" value={this.state.type} onChange={this.onChange}>
                     <option value="">Select Type</option>
                     <option value="Damage">Damage</option>
                     <option value="Faulty">Faulty</option>
@@ -145,16 +131,10 @@ class Create extends Component {
                 </select><br /><br />
                 <button type="submit" className="btn" id="submitButton">Submit</button>
             </form>
-            </div>
-            </div>
-                <div id="tab2" className="tab-slider--body">
-                    <GetData />
-                </div>
-            </div>
-
+      </div>
       </>
     );
   }
 }
 
-export default Create;
+export default Edit;

@@ -1,0 +1,90 @@
+.banner1, .banner2, .banner3, .banner4
+{
+    width: 80%;
+    margin-top: -28%;
+}
+
+.centered1 {
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.centered2 {
+    position: absolute;
+    top: 28.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.centered3 {
+    position: absolute;
+    top: 41.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.centered4 {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+
+}
+.p2
+{
+    font-size: 30px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(29, 29, 29, 0.247) ;
+}
+.p1
+{
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;    
+    color: white;
+}
+
+.btn-succes
+{
+    background: #FF416C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Rubik', sans-serif;
+    width: 35%;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.btn-dangers
+{
+    background: #FF416C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Rubik', sans-serif;
+    width: 35%;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    margin-top: 5%;
+    margin-left: 10%;
+}
