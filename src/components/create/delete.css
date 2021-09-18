@@ -47,7 +47,7 @@
 }
 .p2
 {
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Rubik', sans-serif;
     font-weight: 700;
     color: white;
@@ -87,4 +87,45 @@
     color: white;
     margin-top: 5%;
     margin-left: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.card
+{
+    width: 80%;
+    margin-left: 10%;
+    border: none;
+    margin-top: 2%;
+
+}
+#card1
+{
+    border-radius: 10px;    
+    background: linear-gradient(97.11deg, #c341ff 7.98%, rgba(125, 164, 243, 0) 173.57%);
+
+}
+#card2
+{
+    border-radius: 10px;    
+    background: linear-gradient(97.11deg, #fc2a82 7.98%, rgba(125, 164, 243, 0) 173.57%);
+}
+#card3
+{
+    border-radius: 10px;    
+    background: linear-gradient(97.11deg, #6ed134 7.98%, rgba(125, 164, 243, 0) 173.57%);
+}
+#card4
+{
+    border-radius: 10px;    
+    background: linear-gradient(97.11deg, #56d5fc 7.98%, rgba(125, 164, 243, 0) 173.57%);
 }

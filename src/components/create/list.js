@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import firebase from '../../base';
 import './list.css'
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,6 +34,9 @@ class App extends Component {
 
   componentDidMount() {
     this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
+
+
+
   }
 
   render() {

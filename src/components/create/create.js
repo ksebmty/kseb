@@ -3,6 +3,7 @@ import firebase from '../../base';
 import './create.css';
 import $ from 'jquery';
 import GetData from './list'
+import LLL from '../search/search'
 
 class Create extends Component {
 
@@ -152,6 +153,9 @@ class Create extends Component {
                 </div>
             </div>
 
+
+
+{/* <LLL /> */}
       </>
     );
   }

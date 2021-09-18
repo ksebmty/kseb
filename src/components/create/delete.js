@@ -5,18 +5,6 @@ import './delete.css'
 import Navbar from '../navbar/navbar'
 
 
-
-
-// Banner Image //
-import Banner1 from '../../asset/banner1.png';
-import Banner2 from '../../asset/banner2.png';
-import Banner4 from '../../asset/banner4.png';
-import Banner5 from '../../asset/banner5.png';
-
-
-// Banner Image //
-
-
 class Show extends Component {
 
   constructor(props) {
@@ -56,25 +44,38 @@ class Show extends Component {
       <div>
         <Navbar />
         <br />
-              <img src={Banner5} className="banner1" alt="" />
-              <div className="centered1"><p className="p1">Consumer Number</p>
-                  <p className="p2">{this.state.board.cno}</p>
+        <div className="card" id="card1">
+              <div className="card-body">
+              <p className="p1">Consumer Number</p>
+              <p className="p2">{this.state.board.cno}</p>
               </div>
-              <img src={Banner2} className="banner2" alt="" />
-              <div className="centered2"><p className="p1">Area/Day</p>
-                  <p className="p2">{this.state.board.area}/{this.state.board.day}</p>
+            </div>
+            <div className="card" id="card2">
+              <div className="card-body">
+              <p className="p1">Area/Day</p>
+              <p className="p2">{this.state.board.area}/{this.state.board.day}</p>
               </div>
-              <img src={Banner1} className="banner3" alt="" />
-              <div className="centered3"><p className="p1">Date</p>
-                  <p className="p2">{this.state.board.fdate}</p>
+            </div>
+            <div className="card" id="card3">
+              <div className="card-body">
+              <p className="p1">Date</p>
+              <p className="p2">{this.state.board.fdate}</p>
               </div>
-              <img src={Banner4} className="banner4" alt="" />
-              <div className="centered4"><p className="p1">Type</p>
-                  <p className="p2">{this.state.board.type}</p>
+            </div>
+            <div className="card" id="card4">
+              <div className="card-body">
+              <p className="p1">Type</p>
+              <p className="p2">{this.state.board.type}</p>
               </div>
+            </div>
               
-            <Link to={`/edit/${this.state.key}`} class="btn btn-succes">Edit</Link>
-            <button onClick={this.delete.bind(this, this.state.key)} class="btn btn-dangers">Delete</button>
+            <Link to={`/edit/${this.state.key}`} className="btn btn-succes">Edit</Link>
+            <button onClick={this.delete.bind(this, this.state.key)} className="btn btn-dangers">Delete</button>
+
+
+            <div class="container">
+  <div class="box"></div>
+</div>
 
       </div>
     );
