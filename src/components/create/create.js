@@ -3,7 +3,8 @@ import firebase from '../../base';
 import './create.css';
 import $ from 'jquery';
 import GetData from './list'
-import LLL from '../search/search'
+import HomeContainer from '../homeContainer/homeConrainer'
+
 
 class Create extends Component {
 
@@ -56,16 +57,16 @@ class Create extends Component {
         $(".tab-slider--body:first").show();
       });
       
-      $(".tab-slider--nav li").click(function() {
+      $(".tab-slider--nav a").click(function() {
         $(".tab-slider--body").hide();
         var activeTab = $(this).attr("rel");
         $("#"+activeTab).fadeIn();
-        if($(this).attr("rel") === "tab2"){
-          $('.tab-slider--tabs').addClass('slide');
+        if($(this).attr("rel") === "tab4"){
+          $('.navbar').addClass('slide');
         }else{
-          $('.tab-slider--tabs').removeClass('slide');
+          $('.navbar').removeClass('slide');
         }
-        $(".tab-slider--nav li").removeClass("active");
+        $(".tab-slider--nav a").removeClass("active");
         $(this).addClass("active");
       });     
   }
@@ -75,21 +76,41 @@ class Create extends Component {
     const { cno, area, day, fdate, type } = this.state;
 
 
-
     return (
         <>
-            <div className="container">
               <div className="tab-slider--nav">
-                <ul className="tab-slider--tabs">
-                  <li className="tab-slider--trigger active" rel="tab1">Create</li> 
-                  <li className="tab-slider--trigger" rel="tab2">View</li>
-                </ul>
+                <div className="navbar" id="bottomNavbar">
+                  <a className="tab-slider--trigger active" rel="tab3" id="homeIcon">
+                  <svg width="17" height="20" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 0L16 6V18H11V11H5V18H0V6L8 0Z"/>
+                  </svg>
+                  </a> 
+                  <a className="tab-slider--trigger" rel="tab1" id="addIcon">
+                    <svg width="18" height="20" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z"/>
+                    </svg>       
+                  </a>
+                  <a className="tab-slider--trigger" rel="tab2" id="listIcon">
+                  <svg width="18" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 10H8V0H0V10ZM0 18H8V12H0V18ZM10 18H18V8H10V18ZM10 0V6H18V0H10Z"/>
+                  </svg>
+                  </a>
+                  <a className="tab-slider--trigger" rel="tab4" id="userIcon">
+                  <svg width="25" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 0C9.06087 0 10.0783 0.421427 10.8284 1.17157C11.5786 1.92172 12 2.93913 12 4C12 5.06087 11.5786 6.07828 10.8284 6.82843C10.0783 7.57857 9.06087 8 8 8C6.93913 8 5.92172 7.57857 5.17157 6.82843C4.42143 6.07828 4 5.06087 4 4C4 2.93913 4.42143 1.92172 5.17157 1.17157C5.92172 0.421427 6.93913 0 8 0V0ZM8 10C12.42 10 16 11.79 16 14V16H0V14C0 11.79 3.58 10 8 10Z" />
+                  </svg>
+                  </a>
+                </div>
               </div>
-            </div>
 
 
             <div className="container">
             <div className="tab-slider--container">
+            <div id="tab3" className="tab-slider--body">
+                  <div className="container">
+                    <HomeContainer />
+                  </div>
+                </div>
               <div id="tab1" className="tab-slider--body">
                 <form onSubmit={this.onSubmit}>
                 <input type="text" className="form-control" name="cno" value={cno} onChange={this.onChange} placeholder="Consumer Number" required /><br />
@@ -149,13 +170,16 @@ class Create extends Component {
             </div>
             </div>
                 <div id="tab2" className="tab-slider--body">
+                  <div className="container">
                     <GetData />
+                  </div>
+                </div>
+                <div id="tab4" className="tab-slider--body">
+                  <div className="container">
+                    a
+                  </div>
                 </div>
             </div>
-
-
-
-{/* <LLL /> */}
       </>
     );
   }
